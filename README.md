@@ -139,5 +139,3 @@ Have questions or want to collaborate? Reach out:
 - **Website**: [Shivaraj Srinivas](https://www.shivarajsrinivas.me/)
 
 ---
-
-Let me know if you need further changes or additions! 😊

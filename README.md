@@ -1,7 +1,3 @@
-Here’s the updated **README.md** file including the testing framework:
-
----
-
 # 🏋️ Exercise Tracker
 
 A sleek and efficient app for tracking your daily exercises, built with **React**, **Node.js**, and **MongoDB**. Stay on top of your fitness goals with an intuitive interface and robust backend support.

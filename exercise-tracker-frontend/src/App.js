@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import Analytics from './pages/Analytics';
+import HomePage from './pages/HomePage';
 import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Public Routes */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -23,7 +25,7 @@ const App = () => {
         </Route>
 
         {/* Fallback Route */}
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

@@ -1,12 +1,15 @@
 import express from 'express';
-import exerciseRoutes from './routes/exerciseRoutes.js'; 
-import userRoutes from './routes/userRoutes.js'; 
+import { connectToDB } from './manage-db.js';
+import exerciseRoutes from './routes/exerciseRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import cors from 'cors';
-
 
 const app = express();
 app.use(express.json());
-app.use(cors()); 
+app.use(cors());
+
+// Connect to MongoDB
+connectToDB();
 
 app.use('/api/exercises', exerciseRoutes);
 app.use('/api/users', userRoutes);

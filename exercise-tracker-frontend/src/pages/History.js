@@ -17,9 +17,11 @@ const History = () => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
+        let dateSelected = new Date(date).setUTCHours(0, 0, 0, 0);
         const res = await axiosInstance.get(`/api/exercises`, {
-          params: { userId, date },
+          params: { userId, dateSelected },
         });
+        console.log(date);
         // Flatten exercises and set them
         // const allExercises = res.data.reduce((acc, record) => {
         //   return [...acc, ...record.exercises];

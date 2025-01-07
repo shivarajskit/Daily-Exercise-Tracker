@@ -5,7 +5,7 @@ export const addExercise = async (req, res) => {
   const { userId, date, exercises } = req.body;
   const newExerciseLog = {
     userId,
-    date: date || new Date().toISOString(),
+    date: date || new Date().setUTCHours(0, 0, 0, 0),
     exercises,
   };
 
@@ -24,12 +24,11 @@ export const getExercises = async (req, res) => {
   try {
     // Build the filter object
     const filter = { userId };
+
     if (date) {
-      const parsedDate = new Date(date);
-      filter.date = {
-        $gte: parsedDate,
-        $lt: new Date(parsedDate).setDate(parsedDate.getDate() + 1),
-      };
+      const parsedDate = date;
+
+      filter.date = parsedDate;
     }
 
     // Fetch and sort exercises from the database

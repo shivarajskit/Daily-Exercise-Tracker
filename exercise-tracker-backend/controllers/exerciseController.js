@@ -22,7 +22,7 @@ export const getExercises = async (req, res) => {
   const { userId, date } = req.query;
 
   try {
-    // Build the filter object
+    // Build the filter object.
     const filter = { userId };
 
     if (date) {
